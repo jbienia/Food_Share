@@ -1,5 +1,5 @@
-ActiveAdmin.register Meal do
-  permit_params :description,:image,:price,:category_id,:image_file_name
+ActiveAdmin.register Category do
+  permit_params :name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,5 +12,8 @@ ActiveAdmin.register Meal do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+sidebar :help do
+  "Need help? Email us at help@example.com"
+end
 
 end

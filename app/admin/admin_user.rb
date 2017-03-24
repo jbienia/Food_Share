@@ -25,4 +25,8 @@ ActiveAdmin.register AdminUser do
     f.actions
   end
 
+  sidebar :help do
+  "Need help? Email us at help@example.com"
+end
+
 end
