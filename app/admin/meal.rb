@@ -13,4 +13,11 @@ ActiveAdmin.register Meal do
 #   permitted
 # end
 
+# form do |f|
+#     f.inputs "Upload" do
+#       f.input :image, required: true, as: :file
+#     end
+#     f.actions
+#   end
+
 end

@@ -1,8 +1,4 @@
 class AddAttachmentImageToMeals < ActiveRecord::Migration
-  change_table :meals do |t|
-    t.remove :image
-  end
-
   def self.up
     change_table :meals do |t|
       t.attachment :image
