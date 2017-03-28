@@ -1,5 +1,15 @@
 ActiveAdmin.register Meal do
-  permit_params :description,:image,:price,:category_id,:image_file_name
+  permit_params :description,:image,:price,:category_id,:image_file_name,:_destroy
+@id_value
+controller do
+  def edit
+      @id_value= params[:id]
+      #puts @id_value
+      @file_path = Meal.find_by id: @id_value
+    #puts  @file_path.image_file_name
+  end
+end
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -19,5 +29,15 @@ ActiveAdmin.register Meal do
 #     end
 #     f.actions
 #   end
+#action_item :new, only: :index, label: 'Nouvelle Page'
+
+action_item :view_site do
+
+#  puts @file_path.image_file_name
+  puts 'hey'
+#  @thing = Meals.find_by_id(params[:id]);
+  link_to "Delete Image", "/admin/meals/delete/remove/#{params[:id]}"
+
+end
 
 end
