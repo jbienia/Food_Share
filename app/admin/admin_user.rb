@@ -17,7 +17,7 @@ ActiveAdmin.register AdminUser do
   filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs 'Admin Details' do
       f.input :email
       f.input :password
       f.input :password_confirmation
@@ -26,7 +26,6 @@ ActiveAdmin.register AdminUser do
   end
 
   sidebar :help do
-  "Need help? Email us at help@example.com"
-end
-
+    'Need help? Email us at help@example.com'
+  end
 end
