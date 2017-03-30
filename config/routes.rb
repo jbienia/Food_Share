@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'admin/meals/delete/remove/:value' ,to: 'delete#remove_image'
+  get 'admin/meals/delete/remove/:value', to: 'delete#remove_image'
   root'home#index'
 end
