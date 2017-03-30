@@ -6,7 +6,7 @@
       - bin/**/*
       - test/**/*
       - app/admin/**/*
-
+      - db/schema.rb
   Encoding:
     Enabled: false
 

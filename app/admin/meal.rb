@@ -1,5 +1,5 @@
 ActiveAdmin.register Meal do
-  permit_params :description, :image, :price, :category_id, :_destroy
+  permit_params :description, :image, :price, :category_id, :title, :_destroy
 
   # controller do
   #   def edit

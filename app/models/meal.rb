@@ -1,7 +1,6 @@
 # Meal Mode
 class Meal < ApplicationRecord
   belongs_to :category
-  belongs_to :order
   has_attached_file :image,
                     url: '/assets/image/:basename.:extension'
   validates :description, :price, presence: true
@@ -12,6 +11,6 @@ class Meal < ApplicationRecord
   # Used especially because i have a column name called description
   # and not name
   def name
-    description
+    title
   end
 end
