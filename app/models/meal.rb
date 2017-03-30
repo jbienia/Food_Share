@@ -2,7 +2,8 @@
 class Meal < ApplicationRecord
   belongs_to :category
   has_attached_file :image,
-                    url: '/assets/image/:basename.:extension'
+                    url: ':rails_root/app/assets/images/:basename.:extension'
+                  #  path: ':rails_root/public/assets/:basename.:extension'
   validates :description, :price, presence: true
   validates :price, numericality: { only_integer: true }
   validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
