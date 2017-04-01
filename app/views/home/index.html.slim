@@ -28,4 +28,10 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
     .row
       .col-sm-8
         h1 Great Food
+        == paginate @meals 
         = render partial: 'meals/meals', collection: @meals, locals: {full_details: false}
+        span.prev.disabled = raw(t 'views.pagination.previous') 
+          
+          
+          
+          
