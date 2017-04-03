@@ -1,6 +1,8 @@
 .mealInfo
   h2 = meals.title
   p
-    =image_tag meals.image_file_name
+    /!=image_tag meals.image_file_name
+    /! grab the id from meals...pass it in the url
+    = link_to image_tag( meals.image_file_name), '/category/display_category/2'
   p 
     =meals.description

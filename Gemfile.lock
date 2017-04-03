@@ -252,6 +252,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  formtastic (~> 3.0)
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails

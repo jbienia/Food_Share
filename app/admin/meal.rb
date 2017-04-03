@@ -31,6 +31,8 @@ ActiveAdmin.register Meal do
   #   end
   # action_item :new, only: :index, label: 'Nouvelle Page'
 
+  
+
   action_item :view_site do
     link_to 'Delete Image', "/admin/meals/delete/remove/#{params[:id]}"
   end

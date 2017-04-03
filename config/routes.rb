@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'category/display_category/:value',to:'category#display_category'
+  get 'search/keyword_result/', to: 'search#keyword_result'
+
+  get 'category/display_category/:value', to: 'category#display_category'
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
