@@ -7,6 +7,7 @@ class Meal < ApplicationRecord
                     styles: { small: "259 x 194<" }
   validates :description, :price, presence: true
   validates :price, numericality: { only_integer: true }
+  monetize :cost_cents
 
   validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
 

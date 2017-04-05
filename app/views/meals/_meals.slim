@@ -6,3 +6,5 @@
     = link_to image_tag( meals.image_file_name), '/category/display_category/2'
   p 
     =meals.description
+  p
+    =number_to_currency(meals.cost_cents.to_f / 100)

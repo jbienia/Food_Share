@@ -14,6 +14,8 @@ gem 'formtastic', '~> 3.0'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record
 
+gem 'money-rails', '~>1'
+
 gem 'kaminari'
 
 gem 'pg', '~> 0.18'
