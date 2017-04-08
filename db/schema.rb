@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408161149) do
+ActiveRecord::Schema.define(version: 20170408200050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,10 +72,12 @@ ActiveRecord::Schema.define(version: 20170408161149) do
     t.string   "address"
     t.string   "city"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "user_name"
     t.string   "password"
+    t.integer  "province_id"
+    t.index ["province_id"], name: "index_customers_on_province_id", using: :btree
   end
 
   create_table "meals", force: :cascade do |t|
@@ -105,6 +107,16 @@ ActiveRecord::Schema.define(version: 20170408161149) do
     t.index ["meal_id"], name: "index_orders_on_meal_id", using: :btree
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "GST"
+    t.decimal  "PST"
+    t.decimal  "HST"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "customers", "provinces"
   add_foreign_key "meals", "categories"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "meals"
