@@ -1,0 +1,15 @@
+=render partial: 'navbar/navbar'
+.container
+  .row
+    .col-sm-4
+      p 
+        h2 Name
+        =@contact[0].name
+    .col-sm-4
+      p 
+        h2 Phone Number
+        =@contact[0].phone_number
+    .col-sm-4
+      p 
+        h2 Address
+        =@contact[0].address

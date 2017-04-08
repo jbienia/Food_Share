@@ -1,20 +1,4 @@
-nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-  button.navbar-toggler.navbar-toggler-right aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
-    span.navbar-toggler-icon
-  a.navbar-brand href="#"  Navbar
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link href="#"
-          | Home
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link href='/category/display_category/2' About
-      li.nav-item
-        a.nav-link href="#"  Contact
-    form.form-inline.my-2.my-lg-0 action="/search/keyword_result/"
-      input.form-control.mr-sm-2 placeholder="Search" type="text" name="search_value" /
-      button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
+=render partial: 'navbar/navbar'
 
 
 
@@ -26,27 +10,27 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
             
   .container
     .row
-      .col-sm-8
+      .col-sm-12
         h1 Great Food
         == paginate @meals 
         = render partial: 'meals/meals', collection: @meals, locals: {full_details: false}
         span.prev.disabled = raw(t 'views.pagination.previous') 
         
-        
-        .categoryDiv
-          .row
-          .col-sm-8
-            .categorySquare
-              h1 Categories
-              h4 Meat
-              /! An id corresponding to the category is passed in each url below
-              = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/2' 
-              h4 Extra Healthy
-              = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/4'
-              h4 Savory
-              = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/3'
-              h4 Vegetarian
-              = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/1'
+  .container
+    .categoryDiv
+      .row
+      .col-sm-8
+        .categorySquare
+          h1 Categories
+          h4 Meat
+          /! An id corresponding to the category is passed in each url below
+          = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/2' 
+          h4 Extra Healthy
+          = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/4'
+          h4 Savory
+          = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/3'
+          h4 Vegetarian
+          = link_to image_tag( "/assets/beedPadSew.jpg"), '/category/display_category/1'
               
               
         

@@ -1,0 +1,11 @@
+=render partial: 'navbar/navbar'
+.container
+  .row
+    .col-sm-6
+      p 
+        h2 Company History
+        =@about[0].company_history
+    .col-sm-6
+      p 
+        h2 Vistion Statement
+        =@about[0].vision_statement

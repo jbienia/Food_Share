@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/about', to: 'home#about'
+  get '/contact', to: 'home#contact'
   get 'search/keyword_result/', to: 'search#keyword_result'
 
   get 'category/display_category/:value', to: 'category#display_category'
