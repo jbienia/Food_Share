@@ -1,0 +1,15 @@
+=render partial: 'navbar/navbar'
+.container
+  .row
+    .col-sm-4
+    
+        h2 = @meals.title
+        p
+          /!=image_tag meals.image_file_name
+          /! grab the id from meals...pass it in the url
+          = link_to image_tag( @meals.image_file_name), {controller: "home", action:"get_product", product_id: @meals.id}
+        p 
+          =@meals.description
+        p
+          =number_to_currency(@meals.cost_cents.to_f / 100)
+/= render partial: 'meals/meals', collection: @meals, locals: {full_details: false}

@@ -1,10 +1,10 @@
 .mealInfo
   h2 = meals.title
-  span
+  p
     /!=image_tag meals.image_file_name
     /! grab the id from meals...pass it in the url
-    = link_to image_tag( meals.image_file_name), '/category/display_category/2'
-  span 
+    = link_to image_tag( meals.image_file_name), {controller: "home",action:"get_product",product_id: meals.id}
+  p 
     =meals.description
-  span
+  p
     =number_to_currency(meals.cost_cents.to_f / 100)

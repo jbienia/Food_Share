@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/product', to: 'home#get_product'
   get '/about', to: 'home#about'
   get '/contact', to: 'home#contact'
   get 'search/keyword_result/', to: 'search#keyword_result'

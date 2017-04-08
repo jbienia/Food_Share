@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def contact
     @contact = Contact.all
   end
+
+  def get_product
+      @meals = Meal.where(id: [params[:product_id]]).first
+  end
 end
