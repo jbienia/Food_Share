@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/sign_up', to: 'customers#new'
   resources :customers
+  
  get '/sign_in', to: 'home#sign_in'
  get '/category/search/:number', to: 'search#category_result'
 
