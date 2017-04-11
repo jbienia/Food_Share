@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408200050) do
+ActiveRecord::Schema.define(version: 20170411030110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,11 +72,12 @@ ActiveRecord::Schema.define(version: 20170408200050) do
     t.string   "address"
     t.string   "city"
     t.string   "email"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "user_name"
-    t.string   "password"
     t.integer  "province_id"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.index ["province_id"], name: "index_customers_on_province_id", using: :btree
   end
 

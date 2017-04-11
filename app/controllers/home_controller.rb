@@ -14,4 +14,8 @@ class HomeController < ApplicationController
   def get_product
       @meals = Meal.where(id: [params[:product_id]]).first
   end
+
+  def sign_in
+    
+  end
 end

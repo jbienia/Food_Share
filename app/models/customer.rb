@@ -6,4 +6,6 @@ class Customer < ApplicationRecord
   validates :user_name, uniqueness: true
   # validates :password, length: { minimum: 6 }
   validates :email, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
+  attr_accessor :password
+  validates_confirmation_of :password
 end
