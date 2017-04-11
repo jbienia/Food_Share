@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'log_out', to: 'sessions#destroy', as: 'log_out'
+  get 'log_in', to: 'sessions#new', as: 'log_in'
+  resources :sessions
+
   get '/sign_up', to: 'customers#new'
   resources :customers
-  
+
  get '/sign_in', to: 'home#sign_in'
  get '/category/search/:number', to: 'search#category_result'
 
