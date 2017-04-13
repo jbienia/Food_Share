@@ -21,7 +21,8 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
         | or
         = link_to "log in ", log_in_path
         
-      
+      li.nav-item
+        a.nav-link href='/cart' Cart  
     form.form-inline.my-2.my-lg-0 action="/search/keyword_result/"
       input.form-control.mr-sm-2 placeholder="Search" type="text" name="search_value" /
       button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search

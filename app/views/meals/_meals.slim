@@ -6,5 +6,21 @@
     = link_to image_tag( meals.image_file_name), {controller: "home",action:"get_product",product_id: meals.id}
   p 
     =meals.description
+  
   p
     =number_to_currency(meals.cost_cents.to_f / 100)
+  
+  - if current_user
+    p 
+      form.form-inline.my-2.my-lg-0 action="/shopping_cart/#{meals.id}"
+        input.form-control.mr-sm-2 placeholder="Quantity" type="text" name="search_value" /
+        button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Add To Cart
+      
+      //  = button_to "Add To Cart","/shopping_cart/#{meals.id}"
+      / form
+      / .form-group
+      /   label for="quantity" Quantity:
+      /   input#quantity.form-control type="text" /
+      / //= button_to "Add To Cart","/shopping_cart/#{meals.id}"
+      /   a.btn.btn-info href="/shopping_cart/#{meals.id}" role="button"  Add To Cart
+      /   //button.btn.btn-default type="submit" href="/shopping_cart/#{meals.id}"  Add To Cart
