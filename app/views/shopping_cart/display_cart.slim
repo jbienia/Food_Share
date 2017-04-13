@@ -1,0 +1,6 @@
+.container.meals
+  .row
+    .col-sm-12
+      h1 Great Food
+      
+= render partial: 'meals/cart', collection: @meals, locals: {full_details: false}

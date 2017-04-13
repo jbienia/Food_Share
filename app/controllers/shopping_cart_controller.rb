@@ -17,4 +17,24 @@ class ShoppingCartController < ApplicationController
     redirect_back(fallback_location: "/")
     #redirect_to :back
   end
+
+  def display_cart
+    # @meals_in_cart = []
+    # session[:shopping_cart].each do |key, val|
+    #   puts key
+    #   @meals_in_cart << Meal.find(key)
+     @meals = Meal.find(session[:shopping_cart].keys)
+     #puts @meals.title
+
+
+
+    puts"Shopping cart session"
+    puts session[:shopping_cart]
+    puts "All meals in cart"
+    puts @meals.count
+  end
+  def remove
+    session[:shopping_cart].delete(params[:meal_id])
+    redirect_back(fallback_location: "/")
+  end
 end

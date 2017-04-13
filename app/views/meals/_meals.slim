@@ -12,12 +12,11 @@
   
   - if current_user
     p 
-      = button_to "Add To Cart","/shopping_cart/#{meals.id}"
       form.form-inline.my-2.my-lg-0 action="/shopping_cart/#{meals.id}"
         input.form-control.mr-sm-2 placeholder="Quantity" type="text" name="search_value" /
         button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Add To Cart
       
-      
+      //  = button_to "Add To Cart","/shopping_cart/#{meals.id}"
       / form
       / .form-group
       /   label for="quantity" Quantity:

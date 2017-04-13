@@ -1,0 +1,19 @@
+.mealInfo
+  h2 = cart.title
+  p
+    /!=image_tag meals.image_file_name
+    /! grab the id from meals...pass it in the url
+    = link_to image_tag( cart.image_file_name), {controller: "home",action:"get_product",product_id: cart.id}
+  p 
+    =cart.description
+  
+  p
+    =number_to_currency(cart.cost_cents.to_f / 100)
+  
+  - if current_user
+    p 
+      form.form-inline.my-2.my-lg-0 action="/shopping_cart/#{cart.id}"
+        input.form-control.mr-sm-2 placeholder="#{session[:shopping_cart][cart.id]} " type="text" name="search_value" /
+        button.btn.btn-outline-success.my-2.my-sm-0 type="Submit"  Edit Cart
+      
+      a.nav-link href="/remove_from_cart/#{cart.id}" Remove
