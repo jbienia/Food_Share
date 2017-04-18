@@ -13,7 +13,9 @@
   - if current_user
     p 
       form.form-inline.my-2.my-lg-0 action="/shopping_cart/#{cart.id}"
-        input.form-control.mr-sm-2 placeholder="#{session[:shopping_cart][cart.id]} " type="text" name="search_value" /
+        input.form-control.mr-sm-2 placeholder="#{session[:shopping_cart][cart.id]}" type="text" name="search_value" /
         button.btn.btn-outline-success.my-2.my-sm-0 type="Submit"  Edit Cart
-      
-      a.nav-link href="/remove_from_cart/#{cart.id}" Remove
+        span.quantity Quantity
+        =session[:shopping_cart]["#{cart.id}"]
+        
+        a.nav-link href="/remove_from_cart/#{cart.id}" Remove

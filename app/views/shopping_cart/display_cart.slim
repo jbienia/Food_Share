@@ -1,6 +1,10 @@
+=render partial: 'navbar/navbar' 
 .container.meals
   .row
     .col-sm-12
       h1 Great Food
-      
-= render partial: 'meals/cart', collection: @meals, locals: {full_details: false}
+     
+=render partial: 'meals/cart', collection: @meals, locals: {full_details: false}
+p 
+    button.btn.btn-outline-success.my-2.my-sm-0 type="Submit"  Checkout
+    = button_to 'Call Action', '/checkout', method: :get
