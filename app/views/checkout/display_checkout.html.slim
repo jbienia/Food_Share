@@ -1,6 +1,6 @@
 h1 Checkout 
 
-= form_tag  do 
+= form_tag place_order_path  do 
   p
     = label_tag :name 
     br
@@ -18,28 +18,28 @@ h1 Checkout
     = label_tag :tax  
     br 
         
-- if @gst.present?
+  - if @gst!= 0.0
+    p
+      
+      = text_field_tag :tax, "GST: #{@customer.province.GST}" 
+      
+  - if @hst!= 0.0
+    p
+      
+      = text_field_tag :tax,"HST: #{@customer.province.HST}"
+      
+  - if @pst!= 0.0
+    p
+      
+      = text_field_tag :tax, "PST: #{@customer.province.PST}"
   p
-    
-    = text_field_tag :tax, "GST: #{@customer.province.GST}" 
-    
-- if @hst.present?
+    = label_tag :subtotal  
+    br 
+    = text_field_tag :subtotal, number_to_currency(session[:cart_total].to_f/100)
   p
-    
-    = text_field_tag :tax,"HST: #{@customer.province.HST}"
-    
-- if @pst.present?
-  p
-    
-    = text_field_tag :tax, "PST: #{@customer.province.PST}"
-p
-  = label_tag :subtotal  
-  br 
-  = text_field_tag :subtotal, number_to_currency(session[:cart_total].to_f/100)
-p
-  = label_tag :total  
-  br 
-  = text_field_tag :total,number_to_currency( @money_after_taxes)
+    = label_tag :total  
+    br 
+    = text_field_tag :total,number_to_currency( @money_after_taxes)
 
-p class="button" submit_tag "Log in" 
+  p class="button" =submit_tag "Place Order" 
   

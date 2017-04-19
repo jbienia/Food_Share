@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  
+
 #  post ':user_id'
+ post '/place_order', to:'checkout#place_order',as: 'place_order'
  get '/checkout', to:'checkout#display_checkout', as: 'checkout'
 
- get '/remove_from_cart/:meal_id', to: 'shopping_cart#remove'
+  get '/remove_from_cart/:meal_id', to: 'shopping_cart#remove'
   get '/cart', to:'shopping_cart#display_cart'
   get '/shopping_cart/:meal/', to: 'shopping_cart#add_to_cart', as:'shopping_cart'
   get 'log_out', to: 'sessions#destroy', as: 'log_out'
