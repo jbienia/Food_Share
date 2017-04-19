@@ -21,17 +21,17 @@ h1 Checkout
   - if @gst!= 0.0
     p
       
-      = text_field_tag :tax, "GST: #{@customer.province.GST}" 
+      = text_field_tag :tax, "GST: %#{number_with_precision(@customer.province.GST.to_f * 100, precision: 3,  strip_insignificant_zeros: true)}" 
       
   - if @hst!= 0.0
     p
       
-      = text_field_tag :tax,"HST: #{@customer.province.HST}"
+      = text_field_tag :tax,"HST: %#{number_with_precision(@customer.province.HST.to_f * 100, precision: 3,  strip_insignificant_zeros: true)}"
       
   - if @pst!= 0.0
     p
       
-      = text_field_tag :tax, "PST: #{@customer.province.PST}"
+      = text_field_tag :tax, "PST: %#{number_with_precision(@customer.province.PST.to_f * 100, precision: 4,  strip_insignificant_zeros: true)}"
   p
     = label_tag :subtotal  
     br 
