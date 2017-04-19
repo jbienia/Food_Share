@@ -26,7 +26,6 @@ class CheckoutController < ApplicationController
   end
 
   def after_taxes(tax_total)
-    @value = (((session[:cart_total].to_f / 100) * tax_total) +
-                session[:cart_total].to_f / 100)
+    @value = ((((session[:cart_total].to_f / 100)) * tax_total).round(2) + session[:cart_total].to_f / 100)
   end
 end
