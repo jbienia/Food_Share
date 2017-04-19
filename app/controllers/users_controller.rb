@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = Customer.new(params[:user])
     if @user.save
-      redirct_to root_url, notice: "Signed Up"
+      redirct_to root_url, notice: 'Signed Up'
     else
-      render "new"
+      render 'new'
+    end
   end
-end
 end
