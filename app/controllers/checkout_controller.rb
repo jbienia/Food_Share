@@ -11,8 +11,8 @@ class CheckoutController < ApplicationController
        @hst = @customer.province.HST
 
        @tax_total = @gst + @pst + @hst
-
-       @money_after_taxes = after_taxes(@tax_total)
+       after_taxes(@tax_total)
+       @money_after_taxes = @@value
       #@money_after_taxes = ((session[:cart_total].to_f/100) * @tax_total) + (session[:cart_total].to_f/100)
 
   end
@@ -26,6 +26,6 @@ class CheckoutController < ApplicationController
 
   def after_taxes(tax_total)
  @@value  =  (((session[:cart_total].to_f/100) * tax_total) + session[:cart_total].to_f/100)
- puts @@value
+
   end
 end
