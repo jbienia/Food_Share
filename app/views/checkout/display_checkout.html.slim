@@ -1,0 +1,45 @@
+h1 Checkout 
+
+= form_tag  do 
+  p
+    = label_tag :name 
+    br
+    = text_field_tag :name, @customer.full_name 
+  
+  p
+    = label_tag :address  
+    br 
+    = text_field_tag :address,@customer.address 
+  p
+    = label_tag :province  
+    br 
+    = text_field_tag :province,@customer.province.name 
+  p
+    = label_tag :tax  
+    br 
+        
+- if @gst.present?
+  p
+    
+    = text_field_tag :tax, "GST: #{@customer.province.GST}" 
+    
+- if @hst.present?
+  p
+    
+    = text_field_tag :tax,"HST: #{@customer.province.HST}"
+    
+- if @pst.present?
+  p
+    
+    = text_field_tag :tax, "PST: #{@customer.province.PST}"
+p
+  = label_tag :subtotal  
+  br 
+  = text_field_tag :subtotal, number_to_currency(session[:cart_total].to_f/100)
+p
+  = label_tag :total  
+  br 
+  = text_field_tag :total,number_to_currency( @money_after_taxes)
+
+p class="button" submit_tag "Log in" 
+  

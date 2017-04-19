@@ -16,6 +16,7 @@ end
 def destroy
   session[:user_id] = nil
   session[:shopping_cart] = nil
+  session[:cart_total] = nil
   redirect_to root_url, :notice => "Logged out!"
 end
 end

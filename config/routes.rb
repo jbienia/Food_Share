@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  
 #  post ':user_id'
- get '/checkout', to:'checkout#checkout', as: 'checkout'
+ get '/checkout', to:'checkout#display_checkout', as: 'checkout'
 
  get '/remove_from_cart/:meal_id', to: 'shopping_cart#remove'
   get '/cart', to:'shopping_cart#display_cart'
